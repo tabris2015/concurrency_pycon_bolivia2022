@@ -1,2 +1,5 @@
 fastapi[all]
 uvicorn
+torch
+torchvision
+mediapipe

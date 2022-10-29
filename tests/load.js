@@ -15,8 +15,8 @@ export const options = {
     scenarios: {
         contacts: {
             executor: 'shared-iterations',
-            vus: 2,
-            iterations: 100,
+            vus: 5,
+            iterations: 50,
             maxDuration: '1m',
         },
     },
@@ -53,7 +53,7 @@ const httpFile = http.file(binFile, imgFile, 'image/png')
 const fd = new FormData();
 fd.append('image_file', httpFile);
 const body = fd.body();
-const url = "http://localhost:8000/predict_od";
+const url = "http://localhost:8000/predict";
 const header = {
     'Content-Type': 'multipart/form-data; boundary=' + fd.boundary,
     'accept': 'application/json'
@@ -73,8 +73,8 @@ export default function () {
     // check(res, {'status was not 503': (r) => r.status != 503});
     // check(res, {'status was not 502': (r) => r.status != 502});
     // check(res, {'status was not 499': (r) => r.status != 499});
-    console.log(res.status)
-    console.log(res.json())
+    // console.log(res.status)
+    // console.log(res.json())
     // if(res.status == 200)
     // {
     //     let data = res.json()['latency']
